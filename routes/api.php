@@ -18,9 +18,18 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::post('register', 'Api\RegisterController@register');
-Route::middleware('auth:api')->group( function () {
-    Route::resource('target', 'Api\TargetController');
+//Route::post('register', 'Api\RegisterController@register');
+//Route::middleware('auth:api')->group( function () {
+//    Route::resource('target', 'Api\TargetController');
+//
+//});
 
+//routes/api.php
+//Route::get('/user', function (Request $request) {
+//    return $request->user();
+//})->middleware('auth:api');
+
+Route::prefix('/user')->group( function () {
+    Route::post('/register', 'Api\RegisterController@register');
+    Route::post('/login', 'Api\LoginController@login');
 });
-
