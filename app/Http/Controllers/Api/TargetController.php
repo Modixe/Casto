@@ -32,7 +32,16 @@ class TargetController extends BaseController
         $input = $request->all();
         $validator = Validator::make($input, [
             'name' => 'required',
-            'detail' => 'required'
+            '' => 'required',
+            '' => 'required',
+            '' => 'required',
+            '' => 'required',
+            '' => 'required',
+            '' => 'required',
+            '' => 'required',
+            '' => 'required',
+            '' => 'required',
+            '' => 'required',
         ]);
         if($validator->fails()){
             return $this->sendError('Validation Error.', $validator->errors());

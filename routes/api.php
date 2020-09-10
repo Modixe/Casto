@@ -33,3 +33,7 @@ Route::prefix('/user')->group( function () {
     Route::post('/register', 'Api\RegisterController@register');
     Route::post('/login', 'Api\LoginController@login');
 });
+
+Route::namespace('Api')->group(function () {
+    Route::apiResource('target', 'TargetController');
+});

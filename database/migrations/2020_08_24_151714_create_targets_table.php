@@ -15,18 +15,18 @@ class CreateTargetsTable extends Migration
     {
         Schema::create('targets', function (Blueprint $table) {
             $table->increments('id');               //
-            $table->string('id_key_result');        // ключевой результат
-            $table->string('name_target');          // имя цели
-            $table->string('id_department');        // отдел
-            $table->string('status');               // статус
-            $table->string('description');          // описание
-            $table->string('author');               // автор
-            $table->string('executor');             // исполнитель
-            $table->string('start_date');           // дата начала
-            $table->string('expiration_date');      // дата окончания
-            $table->string('priority');             // приоритет
-            $table->string('confirmed');            // подтвержденый
-            $table->string('period');               // период отчета
+            $table->string('id_key_result')->nullable();                // ключевой результат
+            $table->string('name_target');                              // имя цели
+            $table->string('id_department')->nullable();                // отдел
+            $table->string('status')->default('0%');              // статус
+            $table->string('description');                              // описание
+            $table->string('author')->nullable();                       // автор
+            $table->string('executor')->nullable();                     // исполнитель
+            $table->string('start_date');                               // дата начала
+            $table->string('expiration_date');                          // дата окончания
+            $table->string('priority')->default('0');              // приоритет
+            $table->string('confirmed')->default('false');         // подтвержденый
+            $table->string('period');                                   // период отчета
             $table->timestamps();
         });
     }
