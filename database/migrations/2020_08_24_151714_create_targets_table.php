@@ -14,9 +14,19 @@ class CreateTargetsTable extends Migration
     public function up()
     {
         Schema::create('targets', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->text('detail');
+            $table->increments('id');               //
+            $table->string('id_key_result');        // ключевой результат
+            $table->string('name_target');          // имя цели
+            $table->string('id_department');        // отдел
+            $table->string('status');               // статус
+            $table->string('description');          // описание
+            $table->string('author');               // автор
+            $table->string('executor');             // исполнитель
+            $table->string('start_date');           // дата начала
+            $table->string('expiration_date');      // дата окончания
+            $table->string('priority');             // приоритет
+            $table->string('confirmed');            // подтвержденый
+            $table->string('period');               // период отчета
             $table->timestamps();
         });
     }
